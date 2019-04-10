@@ -18,5 +18,15 @@ pipeline {
                 sh "mvn package -f my-app"
             }
         }
+               stage('install') { 
+            steps {
+                sh "mvn install -f my-app"
+            }
+        }   
+              stage('deploy') { 
+            steps {
+                sh "mvn deploy -f my-app"
+            }
+        }
     }
 }
